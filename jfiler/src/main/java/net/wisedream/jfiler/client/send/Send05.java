@@ -18,7 +18,7 @@ public class Send05 extends Task {
 	@Override
 	public void perform(Manager manager) {
 		Socket connection = context.getAttrib("connection");
-		System.out.print("Check MD5 ... ");
+		System.out.print("Checking MD5 ... ");
 		DataInputStream in = null;
 		try {
 			in = new DataInputStream(connection.getInputStream());
