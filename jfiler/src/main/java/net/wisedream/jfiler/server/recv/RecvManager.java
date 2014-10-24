@@ -33,10 +33,12 @@ public class RecvManager extends StackManager {
 		else {
 			e("File not reveived, deleting temp file...");
 			String fileName = context.getAttrib("fileName");
-			Server config = context.getAttrib("config");
-			File file = new File(config.getDir(), fileName);
-			if (file.exists())
-				file.delete();
+			if (fileName != null) {
+				Server config = context.getAttrib("config");
+				File file = new File(config.getDir(), fileName);
+				if (file.exists())
+					file.delete();
+			}
 		}
 	}
 
