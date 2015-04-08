@@ -5,7 +5,7 @@ import java.io.DataOutputStream;
 import java.net.Socket;
 
 import net.wisedream.jfiler.Const;
-import net.wisedream.jfiler.server.Server;
+import net.wisedream.jfiler.server.ServerConfig;
 import net.wisedream.tasklet.Manager;
 import net.wisedream.tasklet.Task;
 
@@ -27,7 +27,7 @@ public class Recv01 extends Task {
 			in = new DataInputStream(connection.getInputStream());
 			out = new DataOutputStream(connection.getOutputStream());
 			// check key
-			String key = ((Server) context.getAttrib("config")).getKey();
+			String key = ((ServerConfig) context.getAttrib("config")).getKey();
 			String clientKey = in.readUTF();
 			if (clientKey.equals(key)) {
 				manager.addTask(new Recv02());

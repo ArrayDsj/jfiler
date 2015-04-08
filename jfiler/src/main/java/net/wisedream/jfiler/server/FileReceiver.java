@@ -9,9 +9,9 @@ import net.wisedream.tasklet.Task;
 
 public class FileReceiver extends Launcher implements Runnable {
 	private Socket connection;
-	private Server config;
+	private ServerConfig config;
 
-	public FileReceiver(Socket connection, Server config) {
+	public FileReceiver(Socket connection, ServerConfig config) {
 		super();
 		this.connection = connection;
 		this.config = config;

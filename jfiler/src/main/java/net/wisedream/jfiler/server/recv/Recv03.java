@@ -6,7 +6,7 @@ import java.io.InputStream;
 import java.net.Socket;
 
 import net.wisedream.jfiler.Const;
-import net.wisedream.jfiler.server.Server;
+import net.wisedream.jfiler.server.ServerConfig;
 import net.wisedream.jfiler.util.StreamUtil;
 import net.wisedream.tasklet.Manager;
 import net.wisedream.tasklet.Task;
@@ -24,7 +24,7 @@ public class Recv03 extends Task {
 		Socket connection = context.getAttrib("connection");
 		String fileName = context.getAttrib("fileName");
 		Long fileSize = context.getAttrib("fileSize");
-		Server config = context.getAttrib("config");
+		ServerConfig config = context.getAttrib("config");
 		i("Receiving " + fileName + " ...");
 		InputStream in = null;
 		FileOutputStream out = null;

@@ -3,7 +3,7 @@ package net.wisedream.jfiler.server.recv;
 import java.io.File;
 import java.net.Socket;
 
-import net.wisedream.jfiler.server.Server;
+import net.wisedream.jfiler.server.ServerConfig;
 import net.wisedream.tasklet.manager.StackManager;
 
 public class RecvManager extends StackManager {
@@ -34,7 +34,7 @@ public class RecvManager extends StackManager {
 			e("File not reveived, deleting temp file...");
 			String fileName = context.getAttrib("fileName");
 			if (fileName != null) {
-				Server config = context.getAttrib("config");
+				ServerConfig config = context.getAttrib("config");
 				File file = new File(config.getDir(), fileName);
 				if (file.exists())
 					file.delete();
