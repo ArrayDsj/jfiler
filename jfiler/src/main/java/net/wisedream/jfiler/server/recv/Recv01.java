@@ -1,13 +1,14 @@
 package net.wisedream.jfiler.server.recv;
 
+import net.wisedream.common.tm.ContextualKeys;
+import net.wisedream.common.tm.Task;
+import net.wisedream.common.tm.TaskContext;
+import net.wisedream.jfiler.Const;
+import net.wisedream.jfiler.ServerConfig;
+
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.net.Socket;
-
-import net.wisedream.jfiler.Const;
-import net.wisedream.jfiler.server.ServerConfig;
-import net.wisedream.tasklet.Manager;
-import net.wisedream.tasklet.Task;
 
 /**
  * check key
@@ -15,12 +16,12 @@ import net.wisedream.tasklet.Task;
  * @author zxp
  * @Created Oct 20, 2014
  */
-public class Recv01 extends Task {
+public class Recv01 implements Task {
 
-	@Override
-	public void perform(Manager manager) {
-		Socket connection = context.getAttrib("connection");
-		i("Checking key...");
+    @Override
+    public Task perform(TaskContext context) throws Exception {
+       Socket connection = context.getContextualObject(ContextualKeys.OBJ_SOCKET);
+		context.i("Checking key...");
 		DataInputStream in = null;
 		DataOutputStream out = null;
 		try {
@@ -40,6 +41,5 @@ public class Recv01 extends Task {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-	}
-
+    }
 }

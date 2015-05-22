@@ -3,7 +3,7 @@ package net.wisedream.jfiler.server.recv;
 import java.io.File;
 import java.net.Socket;
 
-import net.wisedream.jfiler.server.ServerConfig;
+import net.wisedream.jfiler.ServerConfig;
 import net.wisedream.tasklet.manager.StackManager;
 
 public class RecvManager extends StackManager {

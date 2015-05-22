@@ -7,7 +7,7 @@ import java.io.OutputStream;
 import java.net.Socket;
 
 import net.wisedream.jfiler.Const;
-import net.wisedream.jfiler.client.Client;
+import net.wisedream.jfiler.ClientConfig;
 import net.wisedream.jfiler.util.StreamUtil;
 import net.wisedream.tasklet.Manager;
 import net.wisedream.tasklet.Task;
@@ -27,7 +27,7 @@ public class Send04 extends Task {
 		OutputStream out = null;
 		try {
 			out = connection.getOutputStream();
-			Client config = context.getAttrib("config");
+			ClientConfig config = context.getAttrib("config");
 			File file = new File(config.getFileName());
 			sendFileWithProgress(file, new BufferedOutputStream(out));
 			manager.addTask(new Send05());

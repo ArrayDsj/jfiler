@@ -1,14 +1,15 @@
 package net.wisedream.jfiler.client;
 
+import net.wisedream.jfiler.ClientConfig;
 import net.wisedream.jfiler.client.send.SendManager;
 import net.wisedream.tasklet.Context;
 import net.wisedream.tasklet.Launcher;
 import net.wisedream.tasklet.Task;
 
 public class FileSender extends Launcher {
-	private Client config;
+	private ClientConfig config;
 
-	public FileSender(Client config) {
+	public FileSender(ClientConfig config) {
 		this.config = config;
 	}
 

@@ -4,7 +4,7 @@ import java.io.DataOutputStream;
 import java.io.File;
 import java.net.Socket;
 
-import net.wisedream.jfiler.client.Client;
+import net.wisedream.jfiler.ClientConfig;
 import net.wisedream.jfiler.util.StreamUtil;
 import net.wisedream.tasklet.Manager;
 import net.wisedream.tasklet.Task;
@@ -23,7 +23,7 @@ public class Send03 extends Task {
 		DataOutputStream out = null;
 		try {
 			out = new DataOutputStream(connection.getOutputStream());
-			Client config = context.getAttrib("config");
+			ClientConfig config = context.getAttrib("config");
 			File file = new File(config.getFileName());
 			out.writeUTF(file.getName());
 			out.writeLong(file.length());

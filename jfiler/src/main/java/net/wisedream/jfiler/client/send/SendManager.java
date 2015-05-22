@@ -2,14 +2,14 @@ package net.wisedream.jfiler.client.send;
 
 import java.net.Socket;
 
-import net.wisedream.jfiler.client.Client;
+import net.wisedream.jfiler.ClientConfig;
 import net.wisedream.tasklet.manager.StackManager;
 
 public class SendManager extends StackManager {
 
 	@Override
 	public void onStart() {
-		Client config = context.getAttrib("config");
+		ClientConfig config = context.getAttrib("config");
 		config.checkConfig();
 		addTask(new Send01());
 	}

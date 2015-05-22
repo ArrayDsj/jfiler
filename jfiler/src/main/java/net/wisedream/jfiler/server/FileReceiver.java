@@ -2,6 +2,7 @@ package net.wisedream.jfiler.server;
 
 import java.net.Socket;
 
+import net.wisedream.jfiler.ServerConfig;
 import net.wisedream.jfiler.server.recv.RecvManager;
 import net.wisedream.tasklet.Context;
 import net.wisedream.tasklet.Launcher;

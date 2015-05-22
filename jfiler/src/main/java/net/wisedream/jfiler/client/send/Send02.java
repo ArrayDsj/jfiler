@@ -5,7 +5,7 @@ import java.io.DataOutputStream;
 import java.net.Socket;
 
 import net.wisedream.jfiler.Const;
-import net.wisedream.jfiler.client.Client;
+import net.wisedream.jfiler.ClientConfig;
 import net.wisedream.tasklet.Manager;
 import net.wisedream.tasklet.Task;
 
@@ -27,7 +27,7 @@ public class Send02 extends Task {
 			in = new DataInputStream(connection.getInputStream());
 			out = new DataOutputStream(connection.getOutputStream());
 			// send local key to server
-			String key = ((Client) context.getAttrib("config")).getKey();
+			String key = ((ClientConfig) context.getAttrib("config")).getKey();
 			out.writeUTF(key);
 			out.flush();
 			int result = in.readInt();

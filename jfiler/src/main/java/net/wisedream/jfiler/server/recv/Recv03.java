@@ -6,7 +6,7 @@ import java.io.InputStream;
 import java.net.Socket;
 
 import net.wisedream.jfiler.Const;
-import net.wisedream.jfiler.server.ServerConfig;
+import net.wisedream.jfiler.ServerConfig;
 import net.wisedream.jfiler.util.StreamUtil;
 import net.wisedream.tasklet.Manager;
 import net.wisedream.tasklet.Task;

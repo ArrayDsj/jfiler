@@ -2,7 +2,7 @@ package net.wisedream.jfiler.client.send;
 
 import java.net.Socket;
 
-import net.wisedream.jfiler.client.Client;
+import net.wisedream.jfiler.ClientConfig;
 import net.wisedream.tasklet.Manager;
 import net.wisedream.tasklet.Task;
 
@@ -17,7 +17,7 @@ public class Send01 extends Task {
 	@Override
 	public void perform(Manager manager) {
 		System.out.print("Connecting to server... ");
-		Client config = context.getAttrib("config");
+		ClientConfig config = context.getAttrib("config");
 		try {
 			Socket connection = new Socket(config.getHost(), config.getPort());
 			context.putAttrib("connection", connection);
